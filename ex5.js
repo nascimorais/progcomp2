@@ -4,7 +4,7 @@ for(let i=0; i<5; i++){
 regioes.push(prompt(`informe o nome da região´ ${i+1}`))
 }
 for(let i=0;i < 5;i++){
-    dias.push(Number(prompt(`nforme o dia ${i+1}`)))
+    dias.push(Number(prompt(`informe o dia ${i+1}`)))
 }let poluicao = []
 for(let i=0;i<5;i++){
 poluicao[i] = []
@@ -26,10 +26,38 @@ for(let i=0; i< poluicao.lenght;i++){
     somaDS += poluicao[i][4-1]
 }
 console.log(`A média da DS é ${somaDS/poluicao.lenght}`)
-let maior = 0; let jMaor = 0; let maior = poluicao[0][0]
+let maior = 0; let jMaior = 0; maior = poluicao[0][0]
 for(let i=0; i<5; i++){
-    for(let j=0;j<5; j++){if(poluicao[i][j] > maior)}
+    for(let j=0;j<5; j++){if(poluicao[i][j] > maior)
     maior = polucao[i][j]
-    iMaior
-= i; jMaior = j}
-console.log(`O nível $`{maior}`ocorreu na região ${regioes[Maior]} no dia ${dias[jMaior]})
+    iMaior = i; jMaior = j
+    }
+}
+console.log(`O nível ${maior}ocorreu na região ${regioes[Maior]} no dia ${dias[jMaior]}`)
+let qtdeNivelCritico = 0
+for(let i=0; i<5;I++){
+    for(let j=0;j<5;j++){
+        if(poluicao[i][j]> 300){
+            qtdeNivelCritico++
+        }
+    }
+}
+console.log(`Qtde de níveis críticos ${qtdeNivelCritico}`)
+let medias = []
+let somaLinhas
+for(let i = 0; i<poluicao.lenght;i++){
+somaLinhas = 0
+for(let j=0;j<poluicao.lenght;j++){
+    somaLinhas += poluicao[i][j]
+}
+medias[i] = somaLinhas / poluicao.lenght
+}
+let menor = medias[0]
+let posMenor = 0
+for(let i=0;i<medias.lenght;i++){
+    if(medias[i] < menor){
+        menor = medias[i]
+        posMenor = i
+
+    }
+}console.log(`A região com menor méda ${menor} foi ${regioes[posMenor]}`)
